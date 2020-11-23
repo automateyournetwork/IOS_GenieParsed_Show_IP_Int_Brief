@@ -1,0 +1,45 @@
+Interface,IP Address,Status,Protocol,Method,Interface is OK
+FastEthernet1,unassigned,down,down,unset,YES
+TenGigabitEthernet1/1/1,unassigned,up,up,manual,YES
+TenGigabitEthernet1/1/2,unassigned,up,up,unset,YES
+TenGigabitEthernet1/1/3,unassigned,administratively down,down,unset,YES
+TenGigabitEthernet1/1/4,unassigned,administratively down,down,unset,YES
+TenGigabitEthernet1/1/5,unassigned,administratively down,down,unset,YES
+TenGigabitEthernet1/1/6,unassigned,administratively down,down,unset,YES
+TenGigabitEthernet1/1/7,unassigned,administratively down,down,unset,YES
+TenGigabitEthernet1/1/8,unassigned,administratively down,down,unset,YES
+TenGigabitEthernet1/1/9,unassigned,administratively down,down,unset,YES
+TenGigabitEthernet1/1/10,unassigned,administratively down,down,unset,YES
+TenGigabitEthernet1/1/11,unassigned,administratively down,down,unset,YES
+TenGigabitEthernet1/1/12,unassigned,administratively down,down,unset,YES
+TenGigabitEthernet1/1/13,unassigned,administratively down,down,unset,YES
+TenGigabitEthernet1/1/14,unassigned,up,up,unset,YES
+TenGigabitEthernet1/1/15,unassigned,up,up,unset,YES
+TenGigabitEthernet1/1/16,unassigned,up,up,unset,YES
+TenGigabitEthernet2/1/1,unassigned,up,up,manual,YES
+TenGigabitEthernet2/1/2,unassigned,up,down,unset,YES
+TenGigabitEthernet2/1/3,unassigned,administratively down,down,unset,YES
+TenGigabitEthernet2/1/4,unassigned,administratively down,down,unset,YES
+TenGigabitEthernet2/1/5,unassigned,administratively down,down,unset,YES
+TenGigabitEthernet2/1/6,unassigned,administratively down,down,unset,YES
+TenGigabitEthernet2/1/7,unassigned,administratively down,down,unset,YES
+TenGigabitEthernet2/1/8,unassigned,administratively down,down,unset,YES
+TenGigabitEthernet2/1/9,unassigned,administratively down,down,unset,YES
+TenGigabitEthernet2/1/10,unassigned,administratively down,down,unset,YES
+TenGigabitEthernet2/1/11,unassigned,administratively down,down,unset,YES
+TenGigabitEthernet2/1/12,unassigned,administratively down,down,unset,YES
+TenGigabitEthernet2/1/13,unassigned,administratively down,down,unset,YES
+TenGigabitEthernet2/1/14,unassigned,up,up,unset,YES
+TenGigabitEthernet2/1/15,unassigned,up,up,unset,YES
+TenGigabitEthernet2/1/16,unassigned,up,up,unset,YES
+Port-channel1,172.20.149.2,up,up,NVRAM,YES
+Port-channel1.10,172.20.149.2,up,up,NVRAM,YES
+Port-channel1.40,172.20.149.2,up,up,NVRAM,YES
+Port-channel2,unassigned,down,down,unset,YES
+Port-channel50,unassigned,up,up,unset,YES
+Port-channel60,unassigned,up,up,unset,YES
+Vlan1,unassigned,administratively down,down,unset,YES
+Vlan10,172.24.1.254,up,up,NVRAM,YES
+Vlan20,172.24.2.1,down,down,NVRAM,YES
+Vlan30,172.24.3.1,up,up,NVRAM,YES
+Vlan40,unassigned,administratively down,down,unset,YES

@@ -1,0 +1,312 @@
+{
+    "interface": {
+        "FastEthernet1": {
+            "interface_is_ok": "YES",
+            "ip_address": "unassigned",
+            "method": "unset",
+            "protocol": "down",
+            "status": "down"
+        },
+        "Port-channel1": {
+            "interface_is_ok": "YES",
+            "ip_address": "172.20.149.2",
+            "method": "NVRAM",
+            "protocol": "up",
+            "status": "up"
+        },
+        "Port-channel1.10": {
+            "interface_is_ok": "YES",
+            "ip_address": "172.20.149.2",
+            "method": "NVRAM",
+            "protocol": "up",
+            "status": "up"
+        },
+        "Port-channel1.40": {
+            "interface_is_ok": "YES",
+            "ip_address": "172.20.149.2",
+            "method": "NVRAM",
+            "protocol": "up",
+            "status": "up"
+        },
+        "Port-channel2": {
+            "interface_is_ok": "YES",
+            "ip_address": "unassigned",
+            "method": "unset",
+            "protocol": "down",
+            "status": "down"
+        },
+        "Port-channel50": {
+            "interface_is_ok": "YES",
+            "ip_address": "unassigned",
+            "method": "unset",
+            "protocol": "up",
+            "status": "up"
+        },
+        "Port-channel60": {
+            "interface_is_ok": "YES",
+            "ip_address": "unassigned",
+            "method": "unset",
+            "protocol": "up",
+            "status": "up"
+        },
+        "TenGigabitEthernet1/1/1": {
+            "interface_is_ok": "YES",
+            "ip_address": "unassigned",
+            "method": "manual",
+            "protocol": "up",
+            "status": "up"
+        },
+        "TenGigabitEthernet1/1/10": {
+            "interface_is_ok": "YES",
+            "ip_address": "unassigned",
+            "method": "unset",
+            "protocol": "down",
+            "status": "administratively down"
+        },
+        "TenGigabitEthernet1/1/11": {
+            "interface_is_ok": "YES",
+            "ip_address": "unassigned",
+            "method": "unset",
+            "protocol": "down",
+            "status": "administratively down"
+        },
+        "TenGigabitEthernet1/1/12": {
+            "interface_is_ok": "YES",
+            "ip_address": "unassigned",
+            "method": "unset",
+            "protocol": "down",
+            "status": "administratively down"
+        },
+        "TenGigabitEthernet1/1/13": {
+            "interface_is_ok": "YES",
+            "ip_address": "unassigned",
+            "method": "unset",
+            "protocol": "down",
+            "status": "administratively down"
+        },
+        "TenGigabitEthernet1/1/14": {
+            "interface_is_ok": "YES",
+            "ip_address": "unassigned",
+            "method": "unset",
+            "protocol": "up",
+            "status": "up"
+        },
+        "TenGigabitEthernet1/1/15": {
+            "interface_is_ok": "YES",
+            "ip_address": "unassigned",
+            "method": "unset",
+            "protocol": "up",
+            "status": "up"
+        },
+        "TenGigabitEthernet1/1/16": {
+            "interface_is_ok": "YES",
+            "ip_address": "unassigned",
+            "method": "unset",
+            "protocol": "up",
+            "status": "up"
+        },
+        "TenGigabitEthernet1/1/2": {
+            "interface_is_ok": "YES",
+            "ip_address": "unassigned",
+            "method": "unset",
+            "protocol": "up",
+            "status": "up"
+        },
+        "TenGigabitEthernet1/1/3": {
+            "interface_is_ok": "YES",
+            "ip_address": "unassigned",
+            "method": "unset",
+            "protocol": "down",
+            "status": "administratively down"
+        },
+        "TenGigabitEthernet1/1/4": {
+            "interface_is_ok": "YES",
+            "ip_address": "unassigned",
+            "method": "unset",
+            "protocol": "down",
+            "status": "administratively down"
+        },
+        "TenGigabitEthernet1/1/5": {
+            "interface_is_ok": "YES",
+            "ip_address": "unassigned",
+            "method": "unset",
+            "protocol": "down",
+            "status": "administratively down"
+        },
+        "TenGigabitEthernet1/1/6": {
+            "interface_is_ok": "YES",
+            "ip_address": "unassigned",
+            "method": "unset",
+            "protocol": "down",
+            "status": "administratively down"
+        },
+        "TenGigabitEthernet1/1/7": {
+            "interface_is_ok": "YES",
+            "ip_address": "unassigned",
+            "method": "unset",
+            "protocol": "down",
+            "status": "administratively down"
+        },
+        "TenGigabitEthernet1/1/8": {
+            "interface_is_ok": "YES",
+            "ip_address": "unassigned",
+            "method": "unset",
+            "protocol": "down",
+            "status": "administratively down"
+        },
+        "TenGigabitEthernet1/1/9": {
+            "interface_is_ok": "YES",
+            "ip_address": "unassigned",
+            "method": "unset",
+            "protocol": "down",
+            "status": "administratively down"
+        },
+        "TenGigabitEthernet2/1/1": {
+            "interface_is_ok": "YES",
+            "ip_address": "unassigned",
+            "method": "manual",
+            "protocol": "up",
+            "status": "up"
+        },
+        "TenGigabitEthernet2/1/10": {
+            "interface_is_ok": "YES",
+            "ip_address": "unassigned",
+            "method": "unset",
+            "protocol": "down",
+            "status": "administratively down"
+        },
+        "TenGigabitEthernet2/1/11": {
+            "interface_is_ok": "YES",
+            "ip_address": "unassigned",
+            "method": "unset",
+            "protocol": "down",
+            "status": "administratively down"
+        },
+        "TenGigabitEthernet2/1/12": {
+            "interface_is_ok": "YES",
+            "ip_address": "unassigned",
+            "method": "unset",
+            "protocol": "down",
+            "status": "administratively down"
+        },
+        "TenGigabitEthernet2/1/13": {
+            "interface_is_ok": "YES",
+            "ip_address": "unassigned",
+            "method": "unset",
+            "protocol": "down",
+            "status": "administratively down"
+        },
+        "TenGigabitEthernet2/1/14": {
+            "interface_is_ok": "YES",
+            "ip_address": "unassigned",
+            "method": "unset",
+            "protocol": "up",
+            "status": "up"
+        },
+        "TenGigabitEthernet2/1/15": {
+            "interface_is_ok": "YES",
+            "ip_address": "unassigned",
+            "method": "unset",
+            "protocol": "up",
+            "status": "up"
+        },
+        "TenGigabitEthernet2/1/16": {
+            "interface_is_ok": "YES",
+            "ip_address": "unassigned",
+            "method": "unset",
+            "protocol": "up",
+            "status": "up"
+        },
+        "TenGigabitEthernet2/1/2": {
+            "interface_is_ok": "YES",
+            "ip_address": "unassigned",
+            "method": "unset",
+            "protocol": "down",
+            "status": "up"
+        },
+        "TenGigabitEthernet2/1/3": {
+            "interface_is_ok": "YES",
+            "ip_address": "unassigned",
+            "method": "unset",
+            "protocol": "down",
+            "status": "administratively down"
+        },
+        "TenGigabitEthernet2/1/4": {
+            "interface_is_ok": "YES",
+            "ip_address": "unassigned",
+            "method": "unset",
+            "protocol": "down",
+            "status": "administratively down"
+        },
+        "TenGigabitEthernet2/1/5": {
+            "interface_is_ok": "YES",
+            "ip_address": "unassigned",
+            "method": "unset",
+            "protocol": "down",
+            "status": "administratively down"
+        },
+        "TenGigabitEthernet2/1/6": {
+            "interface_is_ok": "YES",
+            "ip_address": "unassigned",
+            "method": "unset",
+            "protocol": "down",
+            "status": "administratively down"
+        },
+        "TenGigabitEthernet2/1/7": {
+            "interface_is_ok": "YES",
+            "ip_address": "unassigned",
+            "method": "unset",
+            "protocol": "down",
+            "status": "administratively down"
+        },
+        "TenGigabitEthernet2/1/8": {
+            "interface_is_ok": "YES",
+            "ip_address": "unassigned",
+            "method": "unset",
+            "protocol": "down",
+            "status": "administratively down"
+        },
+        "TenGigabitEthernet2/1/9": {
+            "interface_is_ok": "YES",
+            "ip_address": "unassigned",
+            "method": "unset",
+            "protocol": "down",
+            "status": "administratively down"
+        },
+        "Vlan1": {
+            "interface_is_ok": "YES",
+            "ip_address": "unassigned",
+            "method": "unset",
+            "protocol": "down",
+            "status": "administratively down"
+        },
+        "Vlan10": {
+            "interface_is_ok": "YES",
+            "ip_address": "172.24.1.254",
+            "method": "NVRAM",
+            "protocol": "up",
+            "status": "up"
+        },
+        "Vlan20": {
+            "interface_is_ok": "YES",
+            "ip_address": "172.24.2.1",
+            "method": "NVRAM",
+            "protocol": "down",
+            "status": "down"
+        },
+        "Vlan30": {
+            "interface_is_ok": "YES",
+            "ip_address": "172.24.3.1",
+            "method": "NVRAM",
+            "protocol": "up",
+            "status": "up"
+        },
+        "Vlan40": {
+            "interface_is_ok": "YES",
+            "ip_address": "unassigned",
+            "method": "unset",
+            "protocol": "down",
+            "status": "administratively down"
+        }
+    }
+}

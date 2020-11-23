@@ -1,0 +1,170 @@
+---
+
+- hosts: CampusDist
+# Include Clays Collection # 
+# https://github.com/clay584/parse_genie #  
+  collections:
+    - clay584.genie
+  vars_prompt:
+    - name: IOS_User_Prompt
+      prompt: "Enter Cisco IOS Username"
+      private: no 
+    - name: IOS_Password_Prompt
+      prompt: "Enter IOS Password"
+      private: yes   
+  tasks:
+# Register Username and Password #
+    - set_fact:   
+        ios_user: "{{ IOS_User_Prompt }}"     
+        ios_password: "{{ IOS_Password_Prompt }}"
+      no_log: true
+      delegate_to: localhost
+      run_once: true   
+
+# Gather Ansible Facts About Distribution VRFs #
+    - name: show ip interface brief
+      ios_command:
+        commands:
+          - show ip interface brief
+      register: ip_int_br_raw
+
+# Genie parse #
+    - name: Set Fact Genie Filter 
+      set_fact:
+        pyats_ip_int_br: "{{ ip_int_br_raw['stdout'][0] | parse_genie(command='show ip interface brief', os='ios') }}"
+
+# Print facts on screen #          
+    - debug: 
+        msg: "{{ pyats_ip_int_br }}"
+
+# Create RAW JSON, Nice JSON, Nice YAML Files #
+# Create JSON file with Ansible Facts #
+    - name: Create RAW JSON file
+      copy: 
+        content: | 
+          {{ pyats_ip_int_br }}
+        dest: ../documentation/FACTS/CAMPUS/DISTRIBUTION/{{ inventory_hostname }}_Show_IP_Int_Br_RAW.json
+
+# Create JSON file with Ansible Facts #
+    - name: Create raw JSON file
+      copy: 
+        content: | 
+          {{ pyats_ip_int_br | to_nice_json }}
+        dest: ../documentation/FACTS/CAMPUS/DISTRIBUTION/{{ inventory_hostname }}_Show_IP_Int_Br_Nice.json
+
+# Create YAML file with Ansible Facts #
+    - name: Create raw YAML
+      copy: 
+        content: | 
+          {{ pyats_ip_int_br | to_nice_yaml }}
+        dest: ../documentation/FACTS/CAMPUS/DISTRIBUTION/{{ inventory_hostname }}_Show_IP_Int_Br.yml
+
+# Add Headers to YAML #
+    - name: Header Row
+      lineinfile:
+        path: ../documentation/FACTS/CAMPUS/DISTRIBUTION/{{ inventory_hostname }}_Show_IP_Int_Br.yml
+        insertbefore: BOF
+        line: ---        
+      delegate_to: localhost
+
+# Create CSV File #
+# Remove file #
+    - name: Remove file (delete file)
+      file:
+        path: ../documentation/FACTS/CAMPUS/DISTRIBUTION/{{ inventory_hostname }}_Show_IP_Int_Br.csv
+        state: absent
+
+# Create Interface CSV file with results #
+    - name: CSV Data Row
+      lineinfile:
+        path: ../documentation/FACTS/CAMPUS/DISTRIBUTION/{{ inventory_hostname }}_Show_IP_Int_Br.csv
+        line: "{{ item.key }},{{ item.value.ip_address }},{{ item.value.status }},{{ item.value.protocol }},{{ item.value.method }},{{ item.value.interface_is_ok }}"
+        create: yes
+      loop: "{{ pyats_ip_int_br.interface | dict2items }}"
+
+# Format CSV #
+    - name: Format CSV File Clean Up
+      replace:
+        path: ../documentation/FACTS/CAMPUS/DISTRIBUTION/{{ inventory_hostname }}_Show_IP_Int_Br.csv
+        regexp: '\[|\]|"'
+        replace: ''      
+ 
+# Format CSV #
+    - name: Format CSV File Clean Up
+      replace:
+        path: ../documentation/FACTS/CAMPUS/DISTRIBUTION/{{ inventory_hostname }}_Show_IP_Int_Br.csv       
+        regexp: "'"
+        replace: ''
+ 
+# Add Header Row to CSV #
+    - name: CSV Header Row
+      lineinfile:
+        path: ../documentation/FACTS/CAMPUS/DISTRIBUTION/{{ inventory_hostname }}_Show_IP_Int_Br.csv       
+        insertbefore: BOF
+        line: Interface,IP Address,Status,Protocol,Method,Interface is OK
+
+# Create Mark Down File #
+# Remove file #
+    - name: Remove file (delete file)
+      file:
+        path: ../documentation/FACTS/CAMPUS/DISTRIBUTION/{{ inventory_hostname }}_Show_IP_Int_Br.md
+        state: absent
+
+# Create Interface Markdown file with results #
+    - name: Markdown Data Row
+      lineinfile:
+        path: ../documentation/FACTS/CAMPUS/DISTRIBUTION/{{ inventory_hostname }}_Show_IP_Int_Br.md
+        line: "| {{ item.key }} | {{ item.value.ip_address }} | {{ item.value.status }} | {{ item.value.protocol }} | {{ item.value.method }} | {{ item.value.interface_is_ok }} |"
+        create: yes
+      loop: "{{ pyats_ip_int_br.interface | dict2items }}"
+
+# Format MD #
+    - name: Format MD File Clean Up
+      replace:
+        path: ../documentation/FACTS/CAMPUS/DISTRIBUTION/{{ inventory_hostname }}_Show_IP_Int_Br.md
+        regexp: '\[|\]|"'
+        replace: ''      
+ 
+# Format MD #
+    - name: Format MD File Clean Up
+      replace:
+        path: ../documentation/FACTS/CAMPUS/DISTRIBUTION/{{ inventory_hostname }}_Show_IP_Int_Br.md       
+        regexp: "'"
+        replace: ''
+ 
+# Format MD #
+    - name: Format MD File Clean Up
+      replace:
+        path: ../documentation/FACTS/CAMPUS/DISTRIBUTION/{{ inventory_hostname }}_Show_IP_Int_Br.md       
+        regexp: ","
+        replace: " | "
+
+# Format Markdown #
+    - name: Format Markdown File New Lines
+      replace:
+        path: ../documentation/FACTS/CAMPUS/DISTRIBUTION/{{ inventory_hostname }}_Show_IP_Int_Br.md 
+        regexp: '^'
+        replace: '| '
+  
+# Format Markdown #
+    - name: Format Markdown File New Lines
+      replace:
+        path: ../documentation/FACTS/CAMPUS/DISTRIBUTION/{{ inventory_hostname }}_Show_IP_Int_Br.md 
+        regexp: '$'
+        replace: ' |' 
+
+# Add Header Rows to Markdown #
+    - name: Markdown Header Row
+      lineinfile:
+        path: ../documentation/FACTS/CAMPUS/DISTRIBUTION/{{ inventory_hostname }}_Show_IP_Int_Br.md     
+        insertbefore: BOF
+        line: "{{ item.property }}"
+      with_items:
+        - { property: '| --------- | ---------- | ------ | -------- | ------ | --------------- |' }
+        - { property: '| Interface | IP Address | Status | Protocol | Method | Interface is OK |' }
+        - { property: '# Show IP Interface Brief for {{ inventory_hostname }}' }      
+
+# Create Mind Map # 
+    - name: create Show Interfaces Status Mind Map 
+      shell: "npx markmap-cli ../documentation/FACTS/CAMPUS/DISTRIBUTION/{{ inventory_hostname }}_Show_IP_Int_Br.md"
+      register: markmap        
