@@ -1,6 +1,6 @@
-# IOS_GenieParsed_Show_VRF
+# IOS_GenieParsed_Show_IP_Int_Brief
 
-An Ansible playbook that uses the Genie parser to transform the Cisco IOS "show vrf" command into human readable documentation
+An Ansible playbook that uses the Genie parser to transform the Cisco IOS "show ip interface brief" command into human readable documentation
 
 ## Written by John Capobianco
 
@@ -38,7 +38,7 @@ Using Ansible and Genie Parser this playbooks run the show vrf command, displays
 
 6) Clone the Repository
 
-   git clone https://github.com/automateyournetwork/IOS_GenieParsed_Show_VRF.git
+   git clone https://github.com/automateyournetwork/IOS_GenieParsed_Show_IP_Int_Brief.git
 
 ### CUSTOMIZE
 
@@ -50,11 +50,11 @@ Ensure Linux host running Ansible playbook can SSH into targetted hosts using pr
 
 After updating the hosts file with the proper hostnames run the playbook.
 
-cd IOS_GenieParsed_Show_VRF
+cd IOS_GenieParsed_Show_IP_Int_Brief
 
 cd playbooks
 
-ansible-playbook CiscoIOSShowVRF.yml
+ansible-playbook CiscoIOSShowIPIntBriefFacts.yml
 
 <answer prompts for credentials> 
 
@@ -74,19 +74,17 @@ Review files
 
 The following files are created per host:
 
-VRF Facts - General 
+(inventory_hostname)_Show_IP_Int_Br_RAW.json - ALL RAW JSON returned data
 
-(inventory_hostname)_Show_VRF_RAW.json - ALL RAW JSON returned data
+(inventory_hostname)_Show_IP_Int_Br_Nice.json - All JSON returned data filtered to Nice JSON
 
-(inventory_hostname)_Show_VRF_Nice.json - All JSON returned data filtered to Nice JSON
+(inventory_hostname)_Show_IP_Int_Br.yml - All returned data in Nice YAML
 
-(inventory_hostname)_Show_VRF.yml - All returned data in Nice YAML
+(inventory_hostname)_Show_IP_Int_Br.csv - Custom fields in CSV
 
-(inventory_hostname)_Show_VRF.csv - Custom fields in CSV
+(inventory_hostname)_Show_IP_Int_Br.md - Custom fields in Markdown
 
-(inventory_hostname)_Show_VRF.md - Custom fields in Markdown
-
-(inventory_hostname)_Show_VRF.html - Custom fields interactive HTML mind map
+(inventory_hostname)_Show_IP_Int_Br.html - Custom fields interactive HTML mind map
 
 #### DEVELOPMENT NOTES
 
@@ -96,6 +94,6 @@ Tested at vertical scale and horizontally against:
 
 Cisco Catalyst 4500 / 6500 hardware platforms
 
-#### Thanks 
+#### Thanks
 
-Thanks to Clay and the whole Cisco Genie / pyATS / xPresso team! 
+Thanks to Clay and the whole Cisco Genie / pyATS / xPresso team!
